@@ -23,8 +23,18 @@ header {
   color: #feebed;
   font-size: 3.5rem;
 }
-/*carousel*/
+/*CAROUSEL*/
 .imgCarousel {
   height: 700x;
   object-fit: cover;
+}
+/*FOOTER*/
+
+.textFooter {
+  color: white;
+  font-size: 1.5rem;
+}
+.textFooter:hover {
+  color: #965a64;
+  font-size: 1.8rem;
 }
