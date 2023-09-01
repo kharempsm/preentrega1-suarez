@@ -1,17 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 body {
   background-color: #feebed;
 }
 
 /*HEADER*/
 .logo {
-  height: 200px;
+  height: 150px;
 }
 header {
   background-color: #965a64;
   border-radius: 5px;
-  font-size: 3rem;
-  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
+  font-family: "Playfair Display", serif;
 }
 .navLetra {
   color: white;
@@ -21,7 +21,7 @@ header {
 .navLetra:hover {
   font-weight: bold;
   color: #feebed;
-  font-size: 3.5rem;
+  font-size: 2rem;
 }
 /*CAROUSEL*/
 .imgCarousel {
@@ -31,10 +31,11 @@ header {
 /*FOOTER*/
 
 .textFooter {
-  color: white;
-  font-size: 1.5rem;
+  color: #965a64;
+  font-size: 1rem;
 }
 .textFooter:hover {
-  color: #965a64;
-  font-size: 1.8rem;
+  color: white;
+  font-size: 1.3rem;
+  background-color: #965a64;
 }
