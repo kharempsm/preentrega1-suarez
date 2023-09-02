@@ -69,6 +69,7 @@ header {
 .botonColor:hover {
   color: #965a64;
   background-color: #feebed;
+  background-repeat: no-repeat;
 }
 .cardConjuntos {
   background-image: url(../img/foto-conjunto.png);
@@ -99,6 +100,7 @@ header {
   justify-content: flex-end;
 }
 /*PRODUCTOS CARDS*/
+
 .tituloPro {
   text-align: center;
   color: white;
@@ -113,4 +115,8 @@ header {
 .card-text {
   font-size: 2rem;
   color: #965a64;
+}
+.imgProducto {
+  height: 400px;
+  width: auto;
 }
