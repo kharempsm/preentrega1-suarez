@@ -110,6 +110,7 @@ header {
   border: #965a64 solid 3px;
   background-color: #965a64;
   width: 100%;
+  border-radius: 5px;
 }
 
 .card-text {
@@ -118,5 +119,5 @@ header {
 }
 .imgProducto {
   height: 400px;
-  width: auto;
+  margin-bottom: 10px;
 }
