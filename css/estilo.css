@@ -76,3 +76,16 @@ header {
 .cardChaquetas {
   background-image: url(../img/foto-invierno.png);
 }
+/*PRODUCTOS CARDS*/
+.tituloPro {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  margin: 20px;
+  border: #965a64 solid 3px;
+  background-color: #965a64;
+}
+.imgProducto {
+  height: 100%;
+  object-fit: contain;
+}
