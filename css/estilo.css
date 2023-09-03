@@ -20,8 +20,6 @@ header {
 }
 .navLetra {
   color: white;
-  display: flex;
-  justify-content: space-around;
 }
 .navLetra:hover {
   font-weight: bold;
@@ -136,6 +134,7 @@ header {
 .card-text {
   font-size: 2rem;
   color: #e295a2;
+  font-weight: bold;
 }
 .imgProducto {
   height: 400px;
@@ -145,6 +144,7 @@ header {
   border: white solid 3px;
   border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease;
 }
 .cardProductos:hover {
   transform: scale(1.05);
@@ -186,4 +186,12 @@ header {
     width: 100%;
     height: auto;
   }
+}
+/*BLOG*/
+.textBlog {
+  font-size: 1.3rem;
+}
+.contBlog {
+  text-align: center;
+  margin-top: 20px;
 }
