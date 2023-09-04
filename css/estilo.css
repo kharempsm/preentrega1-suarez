@@ -195,3 +195,31 @@ header {
   text-align: center;
   margin-top: 20px;
 }
+/*CONTACTOS*/
+.imgRedes {
+  width: 5%;
+  height: 5%;
+  margin-top: 20px;
+}
+.contContacto {
+  border: 3px solid #e295a2;
+  background-color: white;
+  margin: 20px;
+  flex: 1;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  text-align: left;
+  font-size: 1.5rem;
+}
+input {
+  display: block;
+  padding: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.contSoporte {
+  background-color: white;
+}
