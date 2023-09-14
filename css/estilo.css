@@ -137,7 +137,7 @@ header {
   font-weight: bold;
 }
 .imgProducto {
-  height: 400px;
+  height: 100%;
   margin-bottom: 10px;
 }
 .cardProductos {
@@ -149,6 +149,29 @@ header {
 .cardProductos:hover {
   transform: scale(1.05);
   border: #e295a2 solid 1px;
+}
+
+.btnPro {
+  font-size: 1rem;
+}
+@media (max-width: 579px) {
+  .col-sm-6 {
+    flex-basis: 50%;
+  }
+  .cardProductos {
+    height: 50%;
+    margin-top: 10px;
+  }
+  .imgProducto {
+    height: 100%;
+  }
+  .textProductos {
+    font-size: 15px;
+  }
+  .btnPro {
+    font-size: 0.6rem;
+    width: 100%;
+  }
 }
 /*QUIENES SOMOS*/
 .imgQuienesSomos {
