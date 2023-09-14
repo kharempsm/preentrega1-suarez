@@ -64,16 +64,14 @@ header {
 /*CARDSHOME*/
 
 .card {
-  height: 399px;
   margin-top: 20px;
-  border: #e295a2 solid 5px;
 }
 
 .card-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-transform: uppercase;
   font-weight: bold;
-  color: #965a64;
+  color: #e295a2;
   display: flex;
   justify-content: center;
 }
@@ -89,33 +87,21 @@ header {
   background-color: #feebed;
   background-repeat: no-repeat;
 }
-.cardConjuntos {
-  background-image: url(../img/foto-conjunto.png);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-.cardPoleras {
-  background-image: url(../img/foto-polera.png);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-.cardVestidos {
-  background-image: url(../img/foto-vestido.png);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-.cardChaquetas {
-  background-image: url(../img/foto-invierno.png);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
+@media (max-width: 946px) {
+  .card-title {
+    font-size: 16px;
+  }
+  .botonColor {
+    font-size: 12px;
+  }
+  @media (max-width: 578px) {
+    .col-xl-3 {
+      flex-basis: 50%;
+    }
+    .imgHome {
+      width: 100%;
+    }
+  }
 }
 /*PRODUCTOS CARDS*/
 
@@ -245,4 +231,7 @@ input {
 }
 .contSoporte {
   background-color: white;
+}
+.contParrafo {
+  font-size: 20px;
 }
