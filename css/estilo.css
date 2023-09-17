@@ -198,7 +198,7 @@ header {
 }
 /*BLOG*/
 .textBlog {
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 .contBlog {
   text-align: center;
@@ -231,5 +231,5 @@ input {
   background-color: white;
 }
 .contParrafo {
-  font-size: 20px;
+  font-size: 1.25rem;
 }

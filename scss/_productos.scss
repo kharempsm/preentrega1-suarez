@@ -1,0 +1,16 @@
+.botonColor {
+  font-size: $textMd;
+  border: 3px solid $colorPrincipal;
+  background-color: $colorPrincipal;
+  color: white;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $colorPrincipal;
+    background-color: $colorSecundario;
+  }
+}
+.btnPro {
+  @extend .botonColor;
+  font-size: 1rem;
+}

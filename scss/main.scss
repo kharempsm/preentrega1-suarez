@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import "_vars";
+@import "_mixins";
+@import "_commons";
+@import "_productos";
+@import "_contacto";
+@import "_blog";
+
+//CAROUSEL HOME
+.imgCarousel {
+  height: 700x;
+  object-fit: cover;
+}
+//LISTON HOME
+.listonHome {
+  width: 100%;
+  background-color: hsl(349, 37%, 61%);
+  text-align: center;
+  font-size: $textMd;
+  color: $white;
+  font-weight: bold;
+
+  &:hover {
+    background-color: hsl(349, 37%, 58%);
+  }
+}
+//CARDS HOME
+.card {
+  margin-top: 20px;
+  .card-title {
+    font-size: $textXl;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $colorPrincipal;
+    display: flex;
+    justify-content: center;
+  }
+  .botonColor {
+    font-size: $textMd;
+    border: 3px solid $colorPrincipal;
+    background-color: $colorPrincipal;
+    color: white;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $colorPrincipal;
+      background-color: $colorSecundario;
+    }
+  }
+}

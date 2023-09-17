@@ -1,0 +1,9 @@
+@mixin font($color, $size, $weight) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+}
+@mixin flex($display, $flex) {
+  display: $display;
+  flex-direction: $flex;
+}
