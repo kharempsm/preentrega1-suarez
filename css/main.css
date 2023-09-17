@@ -52,6 +52,155 @@ header .navLetra:hover {
   font-size: 1rem;
 }
 
+.tituloPro {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: #e295a2 solid 3px;
+  background-color: #e295a2;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.cardProductos {
+  border: white solid 3px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease;
+}
+.cardProductos:hover {
+  transform: scale(1.05);
+  border: #e295a2 solid 1px;
+}
+.cardProductos .card-text {
+  color: #e295a2;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.cardProductos .imgProducto {
+  height: 100%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+@media (max-width: 579px) {
+  .col-sm-6 {
+    flex-basis: 50%;
+  }
+  .cardProductos {
+    height: 50%;
+    margin-top: 10px;
+  }
+  .imgProducto {
+    height: 100%;
+  }
+  .textProductos {
+    font-size: 15px;
+  }
+  .btnPro {
+    font-size: 0.6rem;
+    width: 100%;
+  }
+}
+.imgQuienesSomos {
+  width: 500px;
+  height: 600px;
+  border-radius: 5px;
+}
+@media (max-width: 1280px) {
+  .imgQuienesSomos {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.padreQs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px;
+}
+@media (max-width: 1280px) {
+  .padreQs {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.textQs {
+  flex: 1;
+  margin-right: 20px;
+  font-size: 1.2rem;
+}
+
+.contQs {
+  display: flex;
+  flex-direction: column;
+}
+
+.destacar {
+  color: #e96077;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+@media (max-width: 1280px) {
+  .padreQs {
+    flex-direction: column;
+    text-align: center;
+  }
+  .imgQuienesSomos {
+    width: 100%;
+    height: auto;
+  }
+}
+.contContacto {
+  border: 3px solid #e295a2;
+  background-color: white;
+  margin: 20px;
+  flex: 1;
+}
+.contContacto .imgRedes {
+  width: 7%;
+  height: 7%;
+  margin-top: 20px;
+}
+.contContacto label {
+  margin-bottom: 10px;
+  text-align: left;
+  font-size: 1.5rem;
+}
+.contContacto input {
+  padding: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.contSoporte {
+  background-color: white;
+}
+.contSoporte .contParrafo {
+  font-size: 1.2rem;
+}
+
+.textBlog {
+  font-size: 1.2rem;
+}
+
+.contBlog {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.card-text {
+  color: #e295a2;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 .imgCarousel {
   height: 700x;
   object-fit: cover;
@@ -69,6 +218,11 @@ header .navLetra:hover {
   background-color: hsl(349, 37%, 58%);
 }
 
+@media (min-width: 360px) and (max-width: 700px) {
+  .listonHome {
+    font-size: 0.7rem;
+  }
+}
 .card {
   margin-top: 20px;
 }
@@ -80,6 +234,11 @@ header .navLetra:hover {
   display: flex;
   justify-content: center;
 }
+@media (max-width: 946px) {
+  .card .card-title {
+    font-size: 16px;
+  }
+}
 .card .botonColor, .card .btnPro {
   font-size: 1.5rem;
   border: 3px solid #e295a2;
@@ -87,9 +246,23 @@ header .navLetra:hover {
   color: white;
   text-transform: uppercase;
 }
+@media (max-width: 880px) {
+  .card .botonColor, .card .btnPro {
+    font-size: 14px;
+  }
+}
 .card .botonColor:hover, .card .btnPro:hover {
   color: #e295a2;
   background-color: #feebed;
+}
+
+@media (max-width: 579px) {
+  .col-xl-3 {
+    flex-basis: 50%;
+  }
+  .imgHome {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

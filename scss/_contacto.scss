@@ -1,0 +1,31 @@
+.contContacto {
+  border: 3px solid $colorPrincipal;
+  background-color: $white;
+  margin: 20px;
+  flex: 1;
+
+  .imgRedes {
+    width: 7%;
+    height: 7%;
+    margin-top: 20px;
+  }
+
+  label {
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: $textMd;
+  }
+
+  input {
+    padding: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+
+.contSoporte {
+  background-color: $white;
+  .contParrafo {
+    font-size: $textSm;
+  }
+}

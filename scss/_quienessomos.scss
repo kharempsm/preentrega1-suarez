@@ -1,0 +1,41 @@
+.imgQuienesSomos {
+  width: 500px;
+  height: 600px;
+  border-radius: 5px;
+  @media (max-width: 1280px) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.padreQs {
+  @include flex(flex, row);
+  align-items: center;
+  margin: 20px;
+  @media (max-width: 1280px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.textQs {
+  flex: 1;
+  margin-right: 20px;
+  font-size: $textSm;
+}
+.contQs {
+  @include flex(flex, column);
+}
+
+.destacar {
+  @include font(#e96077, 1.3rem, bold);
+}
+@media (max-width: 1280px) {
+  .padreQs {
+    flex-direction: column;
+    text-align: center;
+  }
+  .imgQuienesSomos {
+    width: 100%;
+    height: auto;
+  }
+}

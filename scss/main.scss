@@ -3,6 +3,7 @@
 @import "_mixins";
 @import "_commons";
 @import "_productos";
+@import "_quienessomos";
 @import "_contacto";
 @import "_blog";
 
@@ -17,11 +18,17 @@
   background-color: hsl(349, 37%, 61%);
   text-align: center;
   font-size: $textMd;
-  color: $white;
+  color: white;
   font-weight: bold;
 
   &:hover {
     background-color: hsl(349, 37%, 58%);
+  }
+}
+
+@media (min-width: 360px) and (max-width: 700px) {
+  .listonHome {
+    font-size: 0.7rem;
   }
 }
 //CARDS HOME
@@ -35,16 +42,33 @@
     display: flex;
     justify-content: center;
   }
+  @media (max-width: 946px) {
+    .card-title {
+      font-size: 16px;
+    }
+  }
+
   .botonColor {
     font-size: $textMd;
     border: 3px solid $colorPrincipal;
     background-color: $colorPrincipal;
     color: white;
     text-transform: uppercase;
+    @media (max-width: 880px) {
+      font-size: 14px;
+    }
 
     &:hover {
       color: $colorPrincipal;
       background-color: $colorSecundario;
     }
+  }
+}
+@media (max-width: 579px) {
+  .col-xl-3 {
+    flex-basis: 50%;
+  }
+  .imgHome {
+    width: 100%;
   }
 }
