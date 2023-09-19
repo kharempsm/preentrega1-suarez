@@ -6,8 +6,8 @@
   text-transform: uppercase;
 
   &:hover {
-    color: $colorPrincipal;
-    background-color: $colorSecundario;
+    color: $white;
+    background-color: rgb(250, 182, 194);
   }
 }
 .btnPro {

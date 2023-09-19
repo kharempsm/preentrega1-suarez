@@ -44,8 +44,8 @@ header .navLetra:hover {
   text-transform: uppercase;
 }
 .botonColor:hover, .btnPro:hover {
-  color: #e295a2;
-  background-color: #feebed;
+  color: white;
+  background-color: rgb(250, 182, 194);
 }
 
 .btnPro {
@@ -239,21 +239,14 @@ header .navLetra:hover {
     font-size: 16px;
   }
 }
-.card .botonColor, .card .btnPro {
-  font-size: 1.5rem;
-  border: 3px solid #e295a2;
-  background-color: #e295a2;
-  color: white;
-  text-transform: uppercase;
-}
 @media (max-width: 880px) {
   .card .botonColor, .card .btnPro {
     font-size: 14px;
   }
 }
 .card .botonColor:hover, .card .btnPro:hover {
-  color: #e295a2;
-  background-color: #feebed;
+  color: white;
+  background-color: rgb(250, 182, 194);
 }
 
 @media (max-width: 579px) {

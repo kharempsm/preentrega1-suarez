@@ -49,18 +49,13 @@
   }
 
   .botonColor {
-    font-size: $textMd;
-    border: 3px solid $colorPrincipal;
-    background-color: $colorPrincipal;
-    color: white;
-    text-transform: uppercase;
     @media (max-width: 880px) {
       font-size: 14px;
     }
 
     &:hover {
-      color: $colorPrincipal;
-      background-color: $colorSecundario;
+      color: $white;
+      background-color: rgb(250, 182, 194);
     }
   }
 }
