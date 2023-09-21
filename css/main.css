@@ -8,22 +8,36 @@ body {
 }
 
 header {
-  background-color: #e295a2;
+  background: linear-gradient(to left, #e295a2, #feebed);
   border-radius: 5px;
   font-size: 2rem;
   width: 100%;
   font-weight: bold;
 }
 header .logo {
-  height: 150px;
+  height: 120px;
+  border-radius: 50%;
+}
+@media (max-width: 989px) {
+  header .logo {
+    height: 80px;
+  }
 }
 header .navLetra {
   color: white;
+  transition: font-weight 0.5s ease, color 0.5s ease, font-size 0.5s ease, border-bottom 0.5s ease;
 }
 header .navLetra:hover {
   font-weight: bold;
   color: #feebed;
   font-size: 2.2rem;
+  border-bottom: 2px solid #feebed;
+}
+@media (max-width: 992px) {
+  header .navLetra {
+    color: #e295a2;
+    font-weight: bolder;
+  }
 }
 
 .textFooter {
@@ -85,8 +99,11 @@ header .navLetra:hover {
   margin-bottom: 10px;
   object-fit: cover;
 }
+.cardProductos .textProductos:hover {
+  color: #e295a2;
+}
 
-@media (max-width: 579px) {
+@media (max-width: 576px) {
   .col-sm-6 {
     flex-basis: 50%;
   }
@@ -110,7 +127,7 @@ header .navLetra:hover {
   height: 600px;
   border-radius: 5px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1200px) {
   .imgQuienesSomos {
     width: 100%;
     height: auto;
@@ -123,8 +140,9 @@ header .navLetra:hover {
   align-items: center;
   margin: 20px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1200px) {
   .padreQs {
+    display: flex;
     flex-direction: column;
     text-align: center;
   }
@@ -147,16 +165,6 @@ header .navLetra:hover {
   font-weight: bold;
 }
 
-@media (max-width: 1280px) {
-  .padreQs {
-    flex-direction: column;
-    text-align: center;
-  }
-  .imgQuienesSomos {
-    width: 100%;
-    height: auto;
-  }
-}
 .contContacto {
   border: 3px solid #e295a2;
   background-color: white;
@@ -217,12 +225,12 @@ header .navLetra:hover {
 .listonHome:hover {
   background-color: hsl(349, 37%, 58%);
 }
-
-@media (min-width: 360px) and (max-width: 700px) {
+@media (max-width: 576px) {
   .listonHome {
     font-size: 0.7rem;
   }
 }
+
 .card {
   margin-top: 20px;
 }
@@ -234,12 +242,12 @@ header .navLetra:hover {
   display: flex;
   justify-content: center;
 }
-@media (max-width: 946px) {
+@media (max-width: 992px) {
   .card .card-title {
     font-size: 16px;
   }
 }
-@media (max-width: 880px) {
+@media (max-width: 992px) {
   .card .botonColor, .card .btnPro {
     font-size: 14px;
   }
@@ -249,7 +257,7 @@ header .navLetra:hover {
   background-color: rgb(250, 182, 194);
 }
 
-@media (max-width: 579px) {
+@media (max-width: 576px) {
   .col-xl-3 {
     flex-basis: 50%;
   }

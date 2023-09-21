@@ -24,13 +24,11 @@
   &:hover {
     background-color: hsl(349, 37%, 58%);
   }
-}
-
-@media (min-width: 360px) and (max-width: 700px) {
-  .listonHome {
+  @media (max-width: 576px) {
     font-size: 0.7rem;
   }
 }
+
 //CARDS HOME
 .card {
   margin-top: 20px;
@@ -42,14 +40,14 @@
     display: flex;
     justify-content: center;
   }
-  @media (max-width: 946px) {
+  @media (max-width: 992px) {
     .card-title {
       font-size: 16px;
     }
   }
 
   .botonColor {
-    @media (max-width: 880px) {
+    @media (max-width: 992px) {
       font-size: 14px;
     }
 
@@ -59,7 +57,7 @@
     }
   }
 }
-@media (max-width: 579px) {
+@media (max-width: 576px) {
   .col-xl-3 {
     flex-basis: 50%;
   }

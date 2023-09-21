@@ -1,25 +1,36 @@
 body {
   font-family: $fontPrincipal;
   background-color: $colorSecundario;
-  display: flex;
-  flex-direction: column;
+  @include flex(flex, column);
   align-items: center;
 }
 header {
-  background-color: $colorPrincipal;
+  background: linear-gradient(to left, $colorPrincipal, $colorSecundario);
   border-radius: 5px;
   font-size: $textXl;
   width: 100%;
   font-weight: bold;
   .logo {
-    height: 150px;
+    height: 120px;
+    border-radius: 50%;
+    @media (max-width: 989px) {
+      height: 80px;
+    }
   }
   .navLetra {
     color: $white;
+    transition: font-weight 0.5s ease, color 0.5s ease, font-size 0.5s ease,
+      border-bottom 0.5s ease;
+
     &:hover {
       font-weight: bold;
       color: $colorSecundario;
       font-size: 2.2rem;
+      border-bottom: 2px solid $colorSecundario;
+    }
+    @media (max-width: 992px) {
+      color: $colorPrincipal;
+      font-weight: bolder;
     }
   }
 }
