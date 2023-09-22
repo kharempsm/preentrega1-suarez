@@ -219,15 +219,17 @@ header .navLetra:hover {
   width: 100%;
   background-color: hsl(349, 37%, 61%);
   text-align: center;
-  font-size: 1.5rem;
-  color: white;
-  font-weight: bold;
 }
 .listonHome:hover {
   background-color: hsl(349, 37%, 58%);
 }
+.listonHome .textListon {
+  color: white;
+  font-size: textMd;
+  font-weight: bold;
+}
 @media (max-width: 576px) {
-  .listonHome {
+  .listonHome .textListon {
     font-size: 0.7rem;
   }
 }
