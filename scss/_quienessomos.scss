@@ -2,9 +2,11 @@
   width: 500px;
   height: 600px;
   border-radius: 5px;
+  animation-duration: 2.5s;
+
   @media (max-width: 1200px) {
     width: 100%;
-    height: auto;
+    height: 90%;
   }
 }
 
