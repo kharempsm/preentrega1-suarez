@@ -58,13 +58,12 @@
   .cardProductos {
     height: 50%;
     margin-top: 10px;
+    .textProductos {
+      font-size: 14px;
+    }
   }
   .imgProducto {
     height: 100%;
-    object-fit: cover;
-  }
-  .textProductos {
-    font-size: 13px;
   }
   .btnPro {
     font-size: 0.6rem;

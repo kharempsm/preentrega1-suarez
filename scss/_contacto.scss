@@ -4,8 +4,11 @@
   margin: 20px;
   flex: 1;
 
-  .imgRedes {
+  .contRs {
     margin-top: 20px;
+    .imgRedes {
+      margin-top: 5px;
+    }
   }
 
   label {
@@ -27,12 +30,12 @@
     font-size: $textSm;
   }
 }
-.contRs {
-  ul {
-    li {
-      a {
-        text-decoration: none;
-      }
-    }
-  }
+.botonCont {
+  @extend .botonColor;
+  display: block;
+  margin: 10px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bolder;
 }

@@ -50,14 +50,45 @@ header .navLetra:hover {
   background-color: #e295a2;
 }
 
-.botonColor, .btnPro {
+.cont404 {
+  background-color: #e295a2;
+  width: 600px;
+  height: 600px;
+  text-align: center;
+}
+.cont404 h1 {
+  color: #feebed;
+  font-size: 10rem;
+  font-weight: bold;
+}
+.cont404 p {
+  font-size: 1.5rem;
+  color: #feebed;
+}
+.cont404 .boton404 {
+  background-color: #e295a2;
+  display: inline-block;
+  width: 300px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: white;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+}
+.cont404 .boton404:hover {
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.8);
+}
+
+.botonColor, .botonCont, .btnPro {
   font-size: 1.5rem;
   border: 3px solid #e295a2;
   background-color: #e295a2;
   color: white;
   text-transform: uppercase;
 }
-.botonColor:hover, .btnPro:hover {
+.botonColor:hover, .botonCont:hover, .btnPro:hover {
   color: white;
   background-color: rgb(250, 182, 194);
 }
@@ -116,12 +147,11 @@ header .navLetra:hover {
     height: 50%;
     margin-top: 10px;
   }
+  .cardProductos .textProductos {
+    font-size: 14px;
+  }
   .imgProducto {
     height: 100%;
-    object-fit: cover;
-  }
-  .textProductos {
-    font-size: 13px;
   }
   .btnPro {
     font-size: 0.6rem;
@@ -179,8 +209,11 @@ header .navLetra:hover {
   margin: 20px;
   flex: 1;
 }
-.contContacto .imgRedes {
+.contContacto .contRs {
   margin-top: 20px;
+}
+.contContacto .contRs .imgRedes {
+  margin-top: 5px;
 }
 .contContacto label {
   margin-bottom: 10px;
@@ -200,8 +233,13 @@ header .navLetra:hover {
   font-size: 1.2rem;
 }
 
-.contRs ul li a {
+.botonCont {
+  display: block;
+  margin: 10px;
   text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bolder;
 }
 
 .textBlog {
@@ -261,11 +299,11 @@ header .navLetra:hover {
   }
 }
 @media (max-width: 992px) {
-  .card .botonColor, .card .btnPro {
+  .card .botonColor, .card .btnPro, .card .botonCont {
     font-size: 14px;
   }
 }
-.card .botonColor:hover, .card .btnPro:hover {
+.card .botonColor:hover, .card .btnPro:hover, .card .botonCont:hover {
   color: white;
   background-color: rgb(250, 182, 194);
 }
