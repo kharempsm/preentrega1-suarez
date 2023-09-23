@@ -5,8 +5,6 @@
   flex: 1;
 
   .imgRedes {
-    width: 7%;
-    height: 7%;
     margin-top: 20px;
   }
 
@@ -27,5 +25,14 @@
   background-color: $white;
   .contParrafo {
     font-size: $textSm;
+  }
+}
+.contRs {
+  ul {
+    li {
+      a {
+        text-decoration: none;
+      }
+    }
   }
 }

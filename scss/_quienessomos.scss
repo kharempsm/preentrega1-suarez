@@ -2,7 +2,7 @@
   width: 500px;
   height: 600px;
   border-radius: 5px;
-  animation-duration: 2.5s;
+  animation-duration: 2s;
 
   @media (max-width: 1200px) {
     width: 100%;
@@ -30,4 +30,5 @@
 
 .destacar {
   @include font(#e96077, 1.3rem, bold);
+  animation-duration: 5s;
 }

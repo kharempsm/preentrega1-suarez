@@ -84,6 +84,8 @@ header .navLetra:hover {
   border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.5s ease;
+  margin: 10px;
+  width: 100%;
 }
 .cardProductos:hover {
   transform: scale(1.05);
@@ -99,6 +101,9 @@ header .navLetra:hover {
   margin-bottom: 10px;
   object-fit: cover;
 }
+.cardProductos .textProductos {
+  font-size: 1.5rem;
+}
 .cardProductos .textProductos:hover {
   color: #e295a2;
 }
@@ -113,9 +118,10 @@ header .navLetra:hover {
   }
   .imgProducto {
     height: 100%;
+    object-fit: cover;
   }
   .textProductos {
-    font-size: 15px;
+    font-size: 13px;
   }
   .btnPro {
     font-size: 0.6rem;
@@ -126,7 +132,7 @@ header .navLetra:hover {
   width: 500px;
   height: 600px;
   border-radius: 5px;
-  animation-duration: 2.5s;
+  animation-duration: 2s;
 }
 @media (max-width: 1200px) {
   .imgQuienesSomos {
@@ -164,6 +170,7 @@ header .navLetra:hover {
   color: #e96077;
   font-size: 1.3rem;
   font-weight: bold;
+  animation-duration: 5s;
 }
 
 .contContacto {
@@ -173,8 +180,6 @@ header .navLetra:hover {
   flex: 1;
 }
 .contContacto .imgRedes {
-  width: 7%;
-  height: 7%;
   margin-top: 20px;
 }
 .contContacto label {
@@ -193,6 +198,10 @@ header .navLetra:hover {
 }
 .contSoporte .contParrafo {
   font-size: 1.2rem;
+}
+
+.contRs ul li a {
+  text-decoration: none;
 }
 
 .textBlog {
@@ -236,14 +245,15 @@ header .navLetra:hover {
 
 .card {
   margin-top: 20px;
+  border: solid white 1px;
 }
 .card .card-title {
-  font-size: 2rem;
   text-transform: uppercase;
-  font-weight: bold;
-  color: #e295a2;
   display: flex;
   justify-content: center;
+  color: #e295a2;
+  font-size: 2rem;
+  font-weight: bold;
 }
 @media (max-width: 992px) {
   .card .card-title {
