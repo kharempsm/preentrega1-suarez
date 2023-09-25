@@ -255,6 +255,16 @@ header .navLetra:hover {
   font-weight: bolder;
 }
 
+.botonWs {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.imgWs {
+  width: 100px;
+}
+
 .textBlog {
   font-size: 1.2rem;
 }
