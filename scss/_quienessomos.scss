@@ -3,32 +3,30 @@
   height: 600px;
   border-radius: 5px;
   animation-duration: 2s;
-
-  @media (max-width: 1200px) {
-    width: 100%;
-    height: 90%;
-  }
 }
 
 .padreQs {
   @include flex(flex, row);
   align-items: center;
   margin: 20px;
-  @media (max-width: 1200px) {
-    @include flex(flex, column);
-    text-align: center;
-  }
 }
 .textQs {
   flex: 1;
   margin-right: 20px;
   font-size: $textSm;
 }
-.contQs {
-  @include flex(flex, column);
-}
 
 .destacar {
   @include font(#e96077, 1.3rem, bold);
   animation-duration: 5s;
+}
+@media (max-width: 1200px) {
+  .imgQuienesSomos {
+    width: 100%;
+    height: 90%;
+  }
+  .padreQs {
+    @include flex(flex, column);
+    text-align: center;
+  }
 }

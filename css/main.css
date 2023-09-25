@@ -118,7 +118,6 @@ header .navLetra:hover {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  border: #e295a2 solid 3px;
   background-color: #e295a2;
   width: 100%;
   border-radius: 5px;
@@ -174,12 +173,6 @@ header .navLetra:hover {
   border-radius: 5px;
   animation-duration: 2s;
 }
-@media (max-width: 1200px) {
-  .imgQuienesSomos {
-    width: 100%;
-    height: 90%;
-  }
-}
 
 .padreQs {
   display: flex;
@@ -187,23 +180,11 @@ header .navLetra:hover {
   align-items: center;
   margin: 20px;
 }
-@media (max-width: 1200px) {
-  .padreQs {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-}
 
 .textQs {
   flex: 1;
   margin-right: 20px;
   font-size: 1.2rem;
-}
-
-.contQs {
-  display: flex;
-  flex-direction: column;
 }
 
 .destacar {
@@ -213,6 +194,17 @@ header .navLetra:hover {
   animation-duration: 5s;
 }
 
+@media (max-width: 1200px) {
+  .imgQuienesSomos {
+    width: 100%;
+    height: 90%;
+  }
+  .padreQs {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
 .contContacto {
   border: 3px solid #e295a2;
   background-color: white;
@@ -320,8 +312,6 @@ header .navLetra:hover {
   .card .card-title {
     font-size: 16px;
   }
-}
-@media (max-width: 992px) {
   .card .botonColor, .card .btnPro, .card .botonCont {
     font-size: 14px;
   }
