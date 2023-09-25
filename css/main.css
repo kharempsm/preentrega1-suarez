@@ -235,6 +235,9 @@ header .navLetra:hover {
   margin-bottom: 20px;
   width: 100%;
 }
+.contContacto input:hover {
+  border: 2px solid #e295a2;
+}
 
 .contSoporte {
   background-color: white;
@@ -248,7 +251,7 @@ header .navLetra:hover {
   margin: 10px;
   text-decoration: none;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 2px;
   font-weight: bolder;
 }
 
