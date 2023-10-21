@@ -29,16 +29,28 @@ if (edad >= 1 && edad <= 3) {
 /*ALGORITMO CICLO*/
 
 let productosInfantiles = [
-  { nombre: "Poleras para niña", categoria: "Niña" },
-  { nombre: "Conjuntos para niña", categoria: "Niña" },
-  { nombre: "Polerones para bebe", categoria: "Bebe" },
-  { nombre: "Chaquetas para bebe", categoria: "Bebe" },
+  { nombre: "Conjunto de niña con poleron y buzo", categoria: "Conjuntos" },
+  { nombre: "Conjunto de niña con vestido y calza", categoria: "Conjuntos" },
+  { nombre: "Conjunto de niña con vestido y calza", categoria: "Conjuntos" },
+  { nombre: "Conjunto de niña con vestido y calza", categoria: "Conjuntos" },
+  { nombre: "Poleras de niña con mangas", categoria: "Poleras" },
+  { nombre: "Polera de niña con osito", categoria: "Poleras" },
+  { nombre: "Polera de niña con flores", categoria: "Poleras" },
+  { nombre: "Polera de niña con bordado", categoria: "Poleras" },
+  { nombre: "Vestido de niña con rayas", categoria: "Vestidos" },
+  { nombre: "Vestido de niña con cuello", categoria: "Vestidos" },
+  { nombre: "Vestido de niña con rayas", categoria: "Vestidos" },
+  { nombre: "Vestido de niña con cinturon", categoria: "Vestidos" },
+  { nombre: "Chaqueta de niña con flores", categoria: "Chaquetas" },
+  { nombre: "Chaqueta de niña rosa", categoria: "Chaquetas" },
+  { nombre: "Chaqueta de niña denim", categoria: "Chaquetas" },
+  { nombre: "Chaqueta de niña con botones", categoria: "Chaquetas" },
 ];
-let categoriaFiltrada = "Niña";
+let categoriaFiltrada = "Vestidos";
 
 console.log("Productos de la categoria " + categoriaFiltrada + ":");
 
-for (let i = 0; i < productosInfantiles.length; i++) {
+for (let i = 0; i < productosInfantiles.length; i += 1) {
   let producto = productosInfantiles[i];
   if (producto.categoria === categoriaFiltrada) {
     console.log(producto.nombre);
