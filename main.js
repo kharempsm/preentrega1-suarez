@@ -10,7 +10,7 @@ if (respuesta === "si") {
 
 /*CONDICIONAL ANIDADA */
 
-let edad = prompt("¿Que talla buscas?");
+let edad = Number(prompt("¿Que talla buscas?"));
 
 if (edad >= 1 && edad <= 3) {
   console.log("Consigue las mejores prendas para tu niña de 0 a 3 meses");
@@ -26,7 +26,7 @@ if (edad >= 1 && edad <= 3) {
   console.log("Te invitamos a explorar toda la colección de Helena Clothes");
 }
 
-/*ALGORITMO CICLO*/
+/*ALGORITMO CICLO FOR*/
 
 let productosInfantiles = [
   { nombre: "Conjunto de niña con poleron y buzo", categoria: "Conjuntos" },
@@ -46,7 +46,8 @@ let productosInfantiles = [
   { nombre: "Chaqueta de niña denim", categoria: "Chaquetas" },
   { nombre: "Chaqueta de niña con botones", categoria: "Chaquetas" },
 ];
-let categoriaFiltrada = "Vestidos";
+
+const categoriaFiltrada = "Poleras";
 
 console.log("Productos de la categoria " + categoriaFiltrada + ":");
 
@@ -56,3 +57,26 @@ for (let i = 0; i < productosInfantiles.length; i += 1) {
     console.log(producto.nombre);
   }
 }
+
+/* function carrito*/
+
+let total = 0;
+
+function agregarAlCarrito(precio) {
+  return (total += precio);
+}
+
+function calculoImpuesto(total) {
+  return 1.19 * total;
+}
+total = agregarAlCarrito(8990);
+total = agregarAlCarrito(14990);
+total = agregarAlCarrito(10990);
+total = agregarAlCarrito(13990);
+
+console.log(total);
+
+const totalCarrito = calculoImpuesto(total);
+const totalCarritoRedondeado = Math.round(totalCarrito);
+
+console.log("El total de su compra es de " + "$" + totalCarritoRedondeado);
