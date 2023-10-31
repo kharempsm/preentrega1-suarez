@@ -8,75 +8,120 @@ if (respuesta === "si") {
   alert("No estas en el lugar indicado");
 }
 
-/*CONDICIONAL ANIDADA */
-
-let edad = Number(prompt("¿Que talla buscas?"));
-
-if (edad >= 1 && edad <= 3) {
-  console.log("Consigue las mejores prendas para tu niña de 0 a 3 meses");
-} else if (edad >= 3 && edad <= 6) {
-  console.log("Consigue las mejores prendas para tu niña de 3 a 6 meses");
-} else if (edad >= 6 && edad <= 9) {
-  console.log("Consigue las mejores prendas para tu bebe de 6 a 9 meses");
-} else if (edad >= 9 && edad <= 12) {
-  console.log("Consigue las mejores prendas para tu pequeña caminante");
-} else if (edad >= 12 && edad <= 24) {
-  console.log("Consigue las mejores prendas para tu pequeña toddler");
-} else {
-  console.log("Te invitamos a explorar toda la colección de Helena Clothes");
-}
-
-/*ALGORITMO CICLO FOR*/
-
 let productosInfantiles = [
-  { nombre: "Conjunto de niña con poleron y buzo", categoria: "Conjuntos" },
-  { nombre: "Conjunto de niña con vestido y calza", categoria: "Conjuntos" },
-  { nombre: "Conjunto de niña con vestido y calza", categoria: "Conjuntos" },
-  { nombre: "Conjunto de niña con vestido y calza", categoria: "Conjuntos" },
-  { nombre: "Poleras de niña con mangas", categoria: "Poleras" },
-  { nombre: "Polera de niña con osito", categoria: "Poleras" },
-  { nombre: "Polera de niña con flores", categoria: "Poleras" },
-  { nombre: "Polera de niña con bordado", categoria: "Poleras" },
-  { nombre: "Vestido de niña con rayas", categoria: "Vestidos" },
-  { nombre: "Vestido de niña con cuello", categoria: "Vestidos" },
-  { nombre: "Vestido de niña con rayas", categoria: "Vestidos" },
-  { nombre: "Vestido de niña con cinturon", categoria: "Vestidos" },
-  { nombre: "Chaqueta de niña con flores", categoria: "Chaquetas" },
-  { nombre: "Chaqueta de niña rosa", categoria: "Chaquetas" },
-  { nombre: "Chaqueta de niña denim", categoria: "Chaquetas" },
-  { nombre: "Chaqueta de niña con botones", categoria: "Chaquetas" },
+  {
+    nombre: "Conjunto de niña con poleron y buzo",
+    categoria: "conjuntos",
+    precio: 13990,
+  },
+  {
+    nombre: "Conjunto de niña con vestido y calza",
+    categoria: "conjuntos",
+    precio: 15990,
+  },
+  {
+    nombre: "Conjunto de niña con vestido y calza",
+    categoria: "conjuntos",
+    precio: 15990,
+  },
+  {
+    nombre: "Conjunto de niña con vestido y calza",
+    categoria: "conjuntos",
+    precio: 13990,
+  },
+  { nombre: "Polera de niña con mangas", categoria: "poleras", precio: 4990 },
+  { nombre: "Polera de niña con osito", categoria: "poleras", precio: 8990 },
+  { nombre: "Polera de niña con flores", categoria: "poleras", precio: 5990 },
+  { nombre: "Polera de niña con bordado", categoria: "poleras", precio: 7990 },
+  { nombre: "Vestido de niña con rayas", categoria: "vestidos", precio: 16990 },
+  {
+    nombre: "Vestido de niña con cuello",
+    categoria: "vestidos",
+    precio: 14990,
+  },
+  { nombre: "Vestido de niña con rayas", categoria: "vestidos", precio: 11990 },
+  {
+    nombre: "Vestido de niña con cinturon",
+    categoria: "vestidos",
+    precio: 10990,
+  },
+  {
+    nombre: "Chaqueta de niña con flores",
+    categoria: "chaquetas",
+    precio: 18990,
+  },
+  { nombre: "Chaqueta de niña rosa", categoria: "chaquetas", precio: 17990 },
+  { nombre: "Chaqueta de niña denim", categoria: "chaquetas", precio: 20990 },
+  {
+    nombre: "Chaqueta de niña con botones",
+    categoria: "chaquetas",
+    precio: 15990,
+  },
 ];
 
-const categoriaFiltrada = "Poleras";
+/*CONDICIONAL ANIDADA */
 
-console.log("Productos de la categoria " + categoriaFiltrada + ":");
+let carrito = [];
 
-for (let i = 0; i < productosInfantiles.length; i += 1) {
-  let producto = productosInfantiles[i];
-  if (producto.categoria === categoriaFiltrada) {
-    console.log(producto.nombre);
+let prenda = prompt("¿Que prenda buscas?");
+
+if (prenda == "conjuntos") {
+  console.log("Productos disponibles en la categoria de Conjuntos: ");
+  mostrarProductos();
+} else if (prenda == "poleras") {
+  console.log("Productos disponibles en la categoria de Poleras: ");
+  mostrarProductos();
+} else if (prenda == "vestidos") {
+  console.log("Productos disponibles en la categoria de Vestidos: ");
+  mostrarProductos();
+} else if (prenda == "chaquetas") {
+  console.log("Productos disponibles en la categoria de Chaquetas: ");
+  mostrarProductos();
+} else {
+  console.log("te invitamos a explorar toda nuestra colección");
+}
+/* FUNCTION MOSTRAR PRODUCTOS */
+
+function mostrarProductos() {
+  for (let i = 0; i < productosInfantiles.length; i += 1) {
+    let producto = productosInfantiles[i];
+    if (producto.categoria === prenda) {
+      console.log(producto.nombre + " $" + producto.precio);
+    }
+  }
+  agregarProductosAlCarrito();
+}
+/* FUNCTION FINALIZAR COMPRA */
+
+function finalizarCompra() {
+  let totalCarrito = carrito.reduce(
+    (total, producto) => total + producto.precio,
+    0
+  );
+  totalCarrito *= 1.19;
+  const totalCarritoRedondeado = Math.round(totalCarrito);
+  console.log("El total de su compra es de $" + totalCarritoRedondeado);
+}
+
+/*FUNCTION AGREGAR PRODUCTOS AL CARRITO */
+
+function agregarProductosAlCarrito() {
+  let productoAComprar = prompt(
+    "Escribe el nombre del producto que deseas agregar al carrito (o escribe 'finalizar' para completar la compra):"
+  );
+  if (productoAComprar.toLowerCase() === "finalizar") {
+    finalizarCompra();
+  } else {
+    let productoEncontrado = productosInfantiles.find(
+      (producto) => producto.nombre === productoAComprar
+    );
+    if (productoEncontrado) {
+      carrito.push(productoEncontrado);
+      console.log(productoAComprar + " ha sido agregado al carrito.");
+      agregarProductosAlCarrito();
+    } else {
+      console.log("Producto no encontrado. Inténtalo de nuevo.");
+      agregarProductosAlCarrito();
+    }
   }
 }
-
-/* function carrito*/
-
-let total = 0;
-
-function agregarAlCarrito(precio) {
-  return (total += precio);
-}
-
-function calculoImpuesto(total) {
-  return 1.19 * total;
-}
-total = agregarAlCarrito(8990);
-total = agregarAlCarrito(14990);
-total = agregarAlCarrito(10990);
-total = agregarAlCarrito(13990);
-
-console.log(total);
-
-const totalCarrito = calculoImpuesto(total);
-const totalCarritoRedondeado = Math.round(totalCarrito);
-
-console.log("El total de su compra es de " + "$" + totalCarritoRedondeado);
