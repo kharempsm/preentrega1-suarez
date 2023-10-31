@@ -86,7 +86,7 @@ function mostrarProductos() {
   for (let i = 0; i < productosInfantiles.length; i += 1) {
     let producto = productosInfantiles[i];
     if (producto.categoria === prenda) {
-      console.log(producto.nombre + " $" + producto.precio);
+      console.log(producto.nombre + " $" + producto.precio + "+ iva");
     }
   }
   agregarProductosAlCarrito();
