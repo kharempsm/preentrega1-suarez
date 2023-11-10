@@ -7,7 +7,7 @@ body {
 header {
   background: linear-gradient(to left, $colorPrincipal, $colorSecundario);
   border-radius: 5px;
-  font-size: $textXl;
+  font-size: 2rem;
   width: 100%;
   font-weight: bold;
   .logo {
@@ -20,12 +20,12 @@ header {
   .navLetra {
     color: $white;
     transition: 0.5s ease;
-    font-size: 1.7rem;
-    line-height: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
     &:hover {
       font-weight: bold;
       color: $colorSecundario;
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       border-bottom: 2px solid $colorSecundario;
     }
     @media (max-width: 992px) {
@@ -92,11 +92,12 @@ header {
 
 .nav-item__search {
   width: 300px;
-  height: 45px;
+  height: 40px;
   line-height: 4.5rem;
   border: 5px solid white;
 }
 .form-control {
+  margin-top: 0.2rem;
   position: relative;
   display: block;
   width: 100%;
@@ -105,16 +106,17 @@ header {
   font-weight: 500;
   background-color: white;
   border: 3px solid white;
-  border-radius: var(--bs-border-radius);
+  border-radius: 10px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .nav-item__search:focus {
   border: 0.2rem solid white;
 }
 .nav-btn {
+  margin-top: 0.2rem;
   width: 50%;
-  height: 45px;
-  line-height: 1.3rem;
+  height: 40px;
+  padding-bottom: 0.3rem;
   font-size: 1.3rem;
   background-color: $colorPrincipal;
   border: solid 3px $colorPrincipal;
