@@ -107,6 +107,8 @@ let productosInfantiles = [
   },
 ];
 
+//filtrar productos por categoria y talla
+
 let carrito = [];
 
 let prenda = prompt("¿Qué tipo de prenda buscas?");
@@ -193,4 +195,24 @@ function seleccionarTalla(elemento) {
   tallaSeleccionada = elemento.innerText;
 
   console.log("Talla seleccionada:", tallaSeleccionada);
+}
+
+//AGREGAR PRODUCTOS AL CARRITO MEDIANTE EL BOTON DE LAS CARDS
+
+function agregarAlCarrito(index, tallaSeleccionada) {
+  const producto = productosInfantiles[index];
+
+  if (producto && tallaSeleccionada) {
+    carrito.push({ producto, talla: tallaSeleccionada });
+    console.log(
+      producto.nombre +
+        " de la talla " +
+        tallaSeleccionada +
+        " ha sido agregado al carrito."
+    );
+  } else {
+    console.log(
+      "Por favor, selecciona una talla antes de agregar tu producto al carrito"
+    );
+  }
 }
