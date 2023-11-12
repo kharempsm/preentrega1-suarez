@@ -67,3 +67,52 @@
     width: 100%;
   }
 }
+
+.cardProductos {
+  position: relative;
+  &:hover .contenedor__tallas {
+    opacity: 0.8;
+  }
+}
+
+.contenedor__tallas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 120px;
+  border-radius: 3px;
+}
+
+.contenedor__talla {
+  width: 40px;
+  height: 40px;
+  border: 1px solid $colorPrincipal;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 2.2rem;
+  font-weight: 500;
+  color: $colorPrincipal;
+  &:hover {
+    background-color: $colorPrincipal;
+    color: white;
+  }
+}
+@media (max-width: 573px) {
+  .contenedor__tallas {
+    top: 100px;
+  }
+  .contenedor__talla {
+    font-size: 1rem;
+    width: 30px;
+    height: 25px;
+    line-height: 1.4rem;
+  }
+}

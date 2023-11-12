@@ -12,86 +12,135 @@ let productosInfantiles = [
   {
     nombre: "Conjunto de niña con poleron y buzo",
     categoria: "conjuntos",
-    precio: 13990,
+    precio: 14990,
+    tallas: ["s", "m", "l", "xl"],
   },
   {
     nombre: "Conjunto de niña con vestido y calza",
     categoria: "conjuntos",
     precio: 15990,
+    tallas: ["s", "m", "l", "xl"],
   },
   {
     nombre: "Conjunto de niña con vestido y calza",
     categoria: "conjuntos",
-    precio: 15990,
+    precio: 12990,
+    tallas: ["s", "m", "l", "xl"],
   },
   {
     nombre: "Conjunto de niña con vestido y calza",
     categoria: "conjuntos",
     precio: 13990,
+    tallas: ["s", "m", "l", "xl"],
   },
-  { nombre: "Polera de niña con mangas", categoria: "poleras", precio: 4990 },
-  { nombre: "Polera de niña con osito", categoria: "poleras", precio: 8990 },
-  { nombre: "Polera de niña con flores", categoria: "poleras", precio: 5990 },
-  { nombre: "Polera de niña con bordado", categoria: "poleras", precio: 7990 },
-  { nombre: "Vestido de niña con rayas", categoria: "vestidos", precio: 16990 },
+  {
+    nombre: "Polera de niña con mangas",
+    categoria: "poleras",
+    precio: 8990,
+    tallas: ["s", "m", "l", "xl"],
+  },
+  {
+    nombre: "Polera de niña con osito",
+    categoria: "poleras",
+    precio: 10990,
+    tallas: ["s", "m", "l", "xl"],
+  },
+  {
+    nombre: "Polera de niña con flores",
+    categoria: "poleras",
+    precio: 7990,
+    tallas: ["s", "m", "l", "xl"],
+  },
+  {
+    nombre: "Polera de niña con bordado",
+    categoria: "poleras",
+    precio: 9990,
+    tallas: ["s", "m", "l", "xl"],
+  },
+  {
+    nombre: "Vestido de niña con rayas",
+    categoria: "vestidos",
+    precio: 13990,
+    tallas: ["s", "m", "l", "xl"],
+  },
   {
     nombre: "Vestido de niña con cuello",
     categoria: "vestidos",
-    precio: 14990,
+    precio: 13990,
+    tallas: ["s", "m", "l", "xl"],
   },
-  { nombre: "Vestido de niña con rayas", categoria: "vestidos", precio: 11990 },
+  {
+    nombre: "Vestido de niña con rayas",
+    categoria: "vestidos",
+    precio: 12990,
+    tallas: ["s", "m", "l", "xl"],
+  },
   {
     nombre: "Vestido de niña con cinturon",
     categoria: "vestidos",
-    precio: 10990,
+    precio: 15990,
+    tallas: ["s", "m", "l", "xl"],
   },
   {
     nombre: "Chaqueta de niña con flores",
     categoria: "chaquetas",
-    precio: 18990,
+    precio: 17990,
+    tallas: ["s", "m", "l", "xl"],
   },
-  { nombre: "Chaqueta de niña rosa", categoria: "chaquetas", precio: 17990 },
-  { nombre: "Chaqueta de niña denim", categoria: "chaquetas", precio: 20990 },
+  {
+    nombre: "Chaqueta de niña rosa",
+    categoria: "chaquetas",
+    precio: 15990,
+    tallas: ["s", "m", "l", "xl"],
+  },
+  {
+    nombre: "Chaqueta de niña denim",
+    categoria: "chaquetas",
+    precio: 16990,
+    tallas: ["s", "m", "l", "xl"],
+  },
   {
     nombre: "Chaqueta de niña con botones",
     categoria: "chaquetas",
-    precio: 15990,
+    precio: 18990,
+    tallas: ["s", "m", "l", "xl"],
   },
 ];
 
-/*CONDICIONAL ANIDADA */
-
 let carrito = [];
 
-let prenda = prompt("¿Que prenda buscas?");
+let prenda = prompt("¿Qué tipo de prenda buscas?");
+let talla = prompt("Ingrese la talla deseada") || "no especificada";
 
-if (prenda == "conjuntos") {
-  console.log("Productos disponibles en la categoria de Conjuntos: ");
-  mostrarProductos();
-} else if (prenda == "poleras") {
-  console.log("Productos disponibles en la categoria de Poleras: ");
-  mostrarProductos();
-} else if (prenda == "vestidos") {
-  console.log("Productos disponibles en la categoria de Vestidos: ");
-  mostrarProductos();
-} else if (prenda == "chaquetas") {
-  console.log("Productos disponibles en la categoria de Chaquetas: ");
-  mostrarProductos();
-} else {
-  console.log("te invitamos a explorar toda nuestra colección");
-}
-/* FUNCTION MOSTRAR PRODUCTOS */
-
-function mostrarProductos() {
-  for (let i = 0; i < productosInfantiles.length; i += 1) {
-    let producto = productosInfantiles[i];
-    if (producto.categoria === prenda) {
-      console.log(producto.nombre + " $" + producto.precio + "+ iva");
+function agregarProductosAlCarrito() {
+  let productoAComprar = prompt(
+    "Escribe el nombre del producto que deseas agregar al carrito (o escribe 'finalizar' para completar la compra):"
+  );
+  if (productoAComprar === "finalizar") {
+    finalizarCompra();
+  } else {
+    let productoEncontrado = productosInfantiles.find(
+      (producto) => producto.nombre.toLocaleLowerCase() === productoAComprar
+    );
+    if (productoEncontrado) {
+      carrito.push(productoEncontrado);
+      console.log(productoAComprar + " ha sido agregado al carrito.");
+      agregarProductosAlCarrito();
+    } else {
+      console.log("Te invitamos a explorar toda nuestra colección");
+      agregarProductosAlCarrito();
     }
   }
+}
+
+function mostrarProductos(productos) {
+  productos.forEach((producto) =>
+    console.log(
+      producto.nombre + " - $" + producto.precio + " + iva" + " Talla: " + talla
+    )
+  );
   agregarProductosAlCarrito();
 }
-/* FUNCTION FINALIZAR COMPRA */
 
 function finalizarCompra() {
   let totalCarrito = carrito.reduce(
@@ -100,28 +149,48 @@ function finalizarCompra() {
   );
   totalCarrito *= 1.19;
   const totalCarritoRedondeado = Math.round(totalCarrito);
-  console.log("El total de su compra es de $" + totalCarritoRedondeado);
+  console.log("El total de su compra es de $ " + totalCarritoRedondeado);
 }
 
-/*FUNCTION AGREGAR PRODUCTOS AL CARRITO */
+function filtrarProductos() {
+  const resultado = productosInfantiles
+    .filter(filtrarPrenda)
+    .filter(filtrarTalla);
 
-function agregarProductosAlCarrito() {
-  let productoAComprar = prompt(
-    "Escribe el nombre del producto que deseas agregar al carrito (o escribe 'finalizar' para completar la compra):"
-  );
-  if (productoAComprar.toLowerCase() === "finalizar") {
-    finalizarCompra();
+  if (resultado.length > 0) {
+    mostrarProductos(resultado);
   } else {
-    let productoEncontrado = productosInfantiles.find(
-      (producto) => producto.nombre === productoAComprar
-    );
-    if (productoEncontrado) {
-      carrito.push(productoEncontrado);
-      console.log(productoAComprar + " ha sido agregado al carrito.");
-      agregarProductosAlCarrito();
-    } else {
-      console.log("Producto no encontrado. Inténtalo de nuevo.");
-      agregarProductosAlCarrito();
-    }
+    alert("El producto no está disponible, revisa toda nuestra colección");
   }
+}
+
+function filtrarPrenda(producto) {
+  if (prenda) {
+    return producto.categoria === prenda;
+  }
+  return true;
+}
+
+function filtrarTalla(producto) {
+  if (talla) {
+    return producto.tallas.includes(talla);
+  }
+  return true;
+}
+
+filtrarProductos();
+
+//SELECTOR DE TALLAS EN CADA CARD EN LA PAGINA DE PRODUCTOS
+
+let tallaSeleccionada = null;
+
+function seleccionarTalla(elemento) {
+  const tallas = document.querySelectorAll(".contenedor__talla");
+  tallas.forEach((talla) => talla.classList.remove("seleccionada"));
+
+  elemento.classList.add("seleccionada");
+
+  tallaSeleccionada = elemento.innerText;
+
+  console.log("Talla seleccionada:", tallaSeleccionada);
 }
