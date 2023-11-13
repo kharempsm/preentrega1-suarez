@@ -126,7 +126,12 @@ function agregarProductosAlCarrito() {
     );
     if (productoEncontrado) {
       carrito.push(productoEncontrado);
-      console.log(productoAComprar + " ha sido agregado al carrito.");
+      console.log(
+        productoAComprar +
+          " de la talla " +
+          talla +
+          " ha sido agregado al carrito."
+      );
       agregarProductosAlCarrito();
     } else {
       console.log("Te invitamos a explorar toda nuestra colección");
@@ -161,6 +166,8 @@ function filtrarProductos() {
 
   if (resultado.length > 0) {
     mostrarProductos(resultado);
+
+    agregarProductosAlCarrito();
   } else {
     alert("El producto no está disponible, revisa toda nuestra colección");
   }
