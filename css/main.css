@@ -168,6 +168,11 @@ header .navLetra:hover {
   color: transparent;
 }
 
+.img_carrito {
+  display: inline-block;
+  width: 30px;
+}
+
 .botonColor, .botonCont, .btnPro {
   font-size: 1.5rem;
   border: 3px solid #e295a2;
@@ -195,6 +200,7 @@ header .navLetra:hover {
   background-color: #e295a2;
   width: 100%;
   border-radius: 5px;
+  line-height: 1.9rem;
 }
 
 .cardProductos {

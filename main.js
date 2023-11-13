@@ -197,22 +197,59 @@ function seleccionarTalla(elemento) {
   console.log("Talla seleccionada:", tallaSeleccionada);
 }
 
-//AGREGAR PRODUCTOS AL CARRITO MEDIANTE EL BOTON DE LAS CARDS
+//AGREGAR PRODUCTOS AL CARRITO Y ESCOGER TALLA MEDIANTE EL BOTON DE LAS CARDS (pantalla de productos)
 
-function agregarAlCarrito(index, tallaSeleccionada) {
+function agregarAlCarrito(index) {
   const producto = productosInfantiles[index];
 
-  if (producto && tallaSeleccionada) {
-    carrito.push({ producto, talla: tallaSeleccionada });
-    console.log(
-      producto.nombre +
-        " de la talla " +
-        tallaSeleccionada +
-        " ha sido agregado al carrito."
-    );
+  if (producto) {
+    if (tallaSeleccionada) {
+      carrito.push({ producto, talla: tallaSeleccionada });
+      console.log(
+        producto.nombre +
+          " de la talla " +
+          tallaSeleccionada +
+          " ha sido agregado al carrito."
+      );
+
+      tallaSeleccionada = null;
+    } else {
+      console.log(
+        "Por favor, selecciona una talla antes de agregar tu producto al carrito"
+      );
+    }
   } else {
-    console.log(
-      "Por favor, selecciona una talla antes de agregar tu producto al carrito"
-    );
+    console.log("Producto no encontrado");
   }
 }
+// filtrar por nombre de producto en el input de busqueda
+
+function filtrarProductosPorNombre(termino) {
+  return productosInfantiles.filter((producto) =>
+    producto.nombre.toLowerCase().includes(termino.toLowerCase())
+  );
+}
+
+function mostrarProductos(productos) {
+  console.clear();
+  6;
+  productos.forEach((producto) =>
+    console.log(
+      producto.nombre + " - $" + producto.precio + " + iva" + " Talla: " + talla
+    )
+  );
+}
+function manejarCambioInput() {
+  const input = document.getElementById("inputPrenda");
+  const termino = input.value.trim();
+
+  const productosFiltrados = filtrarProductosPorNombre(termino);
+
+  mostrarProductos(
+    productosFiltrados.length > 0 ? productosFiltrados : productosInfantiles
+  );
+}
+
+document
+  .getElementById("inputPrenda")
+  .addEventListener("input", manejarCambioInput);
