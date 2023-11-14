@@ -135,7 +135,6 @@ function agregarProductosAlCarrito() {
       agregarProductosAlCarrito();
     } else {
       console.log("Te invitamos a explorar toda nuestra colección");
-      agregarProductosAlCarrito();
     }
   }
 }
@@ -229,7 +228,7 @@ function agregarAlCarrito(index) {
     console.log("Producto no encontrado");
   }
 }
-// filtrar por nombre de producto en el input de busqueda
+// FILTRAR POR NOMBRE DE PRODUCTO EN EL INPUT DE BUSQUEDA DEL HEADER
 
 function filtrarProductosPorNombre(termino) {
   return productosInfantiles.filter((producto) =>
