@@ -17,6 +17,8 @@
       name="keywords"
       content="MODA INFANTIL, ROPA DE NIÑA, VESTIDOS PARA NIÑAS, POLERAS INFANTILES,CHAQUETAS PARA NIÑAS, CONJUNTOS PARA NIÑAS"
     />
+    <link rel="stylesheet" href="fontawesome-free-6.1.2-web/css/all.min.css" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -27,10 +29,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+
     <link rel="stylesheet" href="css/main.css" />
+    <script src="./main.js" defer></script>
   </head>
   <body>
-    <header class="navbar navbar-expand-lg">
+    <header class="navbar navbar-expand-lg navbar-custom">
       <div class="container-fluid">
         <a href="index.html">
           <img class="logo" src="img/logo-hc.png" alt="Logo Helena Clothes" />
@@ -85,14 +89,28 @@
                   aria-label="buscar"
                 />
                 <label for="buscar" class="form__label">Prenda</label>
-                <button class="nav-btn" type="submit">Buscar</button>
+                <button class="nav-btn" type="submit">
+                  <i class="fa-solid fa-magnifying-glass icon__buscar"></i>
+                </button>
               </form>
             </li>
-            <li class="nav-item"></li>
           </ul>
+          <button class="navbar__toggler" id="cart-open">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </button>
         </nav>
       </div>
     </header>
+
+    <div class="cart-container" id="cart-container">
+      <button class="cart-close" id="close-cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="cart-cont__img">
+        <img class="cart__img" src="./img/img-carritovacio.svg" alt="" />
+        <p class="cart__text">Tu carrito de compras esta vacio</p>
+      </div>
+    </div>
 
     <!-- CAROUSEL -->
 
@@ -228,6 +246,5 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
-    <script src="main.js"></script>
   </body>
 </html>

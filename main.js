@@ -1,25 +1,27 @@
 /*CONDICIONALES*/
 
-let respuesta = prompt("Hola, ¿Buscas ropa de niña?");
+/*let respuesta = prompt("Hola, ¿Buscas ropa de niña?");
 
 if (respuesta === "si") {
   alert("Estas en el lugar indicado");
 } else {
   alert("No estas en el lugar indicado");
 }
-
+*/
 let productosInfantiles = [
   {
     nombre: "Conjunto de niña con poleron y buzo",
     categoria: "conjuntos",
     precio: 14990,
     tallas: ["s", "m", "l", "xl"],
+    imagen: "../img/conjunto-1.webp",
   },
   {
     nombre: "Conjunto de niña con vestido y calza",
     categoria: "conjuntos",
     precio: 15990,
     tallas: ["s", "m", "l", "xl"],
+    imagen: "../img/conjunto-2.webp",
   },
   {
     nombre: "Conjunto de niña con vestido y calza",
@@ -219,6 +221,8 @@ function agregarAlCarrito(index) {
       );
 
       tallaSeleccionada = null;
+      //llamamos a la funcion para actualizar carrito
+      actualizarCarrito();
     } else {
       console.log(
         "Por favor, selecciona una talla antes de agregar tu producto al carrito"
@@ -228,6 +232,38 @@ function agregarAlCarrito(index) {
     console.log("Producto no encontrado");
   }
 }
+
+function actualizarCarrito() {
+  const cartContainer = document.getElementById("cart-container");
+  const productosEnCarritoHTML = carrito.map((item) => {
+    return `
+    <div>
+      <img src="${item.producto.imagen}" alt="Imagen del producto" class="cart-product-img">
+      <p>${item.producto.nombre} - Talla: ${item.talla}</p>
+    </div>
+  `;
+  });
+  cartContainer.innerHTML = `
+  <div>
+    ${productosEnCarritoHTML.join("")}
+  </div>
+  <button class="cart-close" id="close-cart">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+`;
+
+  asignarEventoCerrarCarrito();
+}
+
+function cerrarCarrito() {
+  cartContainer.classList.remove("cart-container--visible");
+}
+
+function asignarEventoCerrarCarrito() {
+  const closeCartBtn = document.getElementById("close-cart");
+  closeCartBtn.addEventListener("click", cerrarCarrito);
+}
+
 // FILTRAR POR NOMBRE DE PRODUCTO EN EL INPUT DE BUSQUEDA DEL HEADER
 
 function filtrarProductosPorNombre(termino) {
@@ -259,3 +295,23 @@ function manejarCambioInput() {
 document
   .getElementById("inputPrenda")
   .addEventListener("input", manejarCambioInput);
+
+//EVENTO PARA VISUALIZAR Y CERRAR LA PESTAÑA DEL CARRITO
+
+let cartContainer;
+
+document.addEventListener("DOMContentLoaded", function () {
+  let cartOpenButton = document.querySelector(".navbar__toggler");
+  let cartCloseButton = document.querySelector(".cart-close");
+  cartContainer = document.querySelector(".cart-container");
+
+  asignarEventoCerrarCarrito();
+
+  cartOpenButton.addEventListener("click", function () {
+    cartContainer.classList.add("cart-container--visible");
+  });
+
+  cartCloseButton.addEventListener("click", function () {
+    cartContainer.classList.remove("cart-container--visible");
+  });
+});
