@@ -17,14 +17,15 @@
   width: 100%;
 }
 .tituloPro {
-  @include font($white, $textXl, bold);
+  @include font($white, 1.7rem, bold);
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: $colorPrincipal;
   width: 100%;
   border-radius: 5px;
-  line-height: 1.9rem;
+  padding-bottom: 0.2rem;
+  line-height: 1;
 }
 .cardProductos {
   border: $white solid 3px;

@@ -245,7 +245,7 @@ header .navLetra:hover {
 
 .tituloPro {
   color: white;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: bold;
   text-align: center;
   margin-top: 20px;
@@ -253,7 +253,8 @@ header .navLetra:hover {
   background-color: #e295a2;
   width: 100%;
   border-radius: 5px;
-  line-height: 1.9rem;
+  padding-bottom: 0.2rem;
+  line-height: 1;
 }
 
 .cardProductos {
