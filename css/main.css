@@ -226,6 +226,13 @@ header .navLetra:hover {
   color: gray;
 }
 
+.listonHome .textListon {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1;
+  padding-top: 0.3rem;
+}
+
 .botonColor, .botonCont, .btnPro {
   font-size: 1.5rem;
   border: 3px solid #e295a2;
