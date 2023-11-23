@@ -15,7 +15,7 @@ header {
   font-weight: bold;
 }
 header .logo {
-  height: 120px;
+  height: 80px;
   border-radius: 50%;
 }
 @media (max-width: 989px) {
