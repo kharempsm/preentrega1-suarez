@@ -112,17 +112,6 @@ header {
 .nav-item__search:focus {
   border: 0.2rem solid white;
 }
-.nav-btn {
-  width: 40px;
-  height: 40px;
-  padding-bottom: 0.3rem;
-  font-size: 1.3rem;
-  background-color: $colorPrincipal;
-  border: solid 3px $colorPrincipal;
-  border-radius: 10px;
-  color: $colorSecundario;
-  box-shadow: 0 10px 10px -5px rgba(255, 255, 255, 0.8);
-}
 
 .cont__search {
   position: relative;
@@ -152,7 +141,7 @@ header {
 }
 
 .cart-container {
-  border: 3px solid $colorPrincipal;
+  border: 3px solid white;
   border-radius: 5px;
   width: 25%;
   height: 100%;
@@ -168,10 +157,9 @@ header {
   display: block;
 }
 .navbar__toggler {
-  width: 40px;
-  height: 40px;
+  text-align: center;
+  position: relative;
   padding-bottom: 0.3rem;
-  font-size: 1.3rem;
   margin-bottom: 0.3rem;
   margin-left: 0.5rem;
   background-color: $colorPrincipal;
@@ -179,6 +167,10 @@ header {
   border-radius: 10px;
   color: $colorSecundario;
   box-shadow: 0 10px 10px -5px rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+.fa-bag-shopping {
+  font-size: 2.5rem;
 }
 .cart-close {
   position: absolute;
@@ -190,15 +182,13 @@ header {
   font-size: 2rem;
   text-align: center;
   line-height: 2rem;
-  background-color: $colorPrincipal;
-  border: solid 3px $colorPrincipal;
-  border-radius: 10px;
-  color: $colorSecundario;
+  color: $colorPrincipal;
+  border: 0;
 }
 .cart-cont__img {
   display: block;
   text-align: center;
-  padding-top: 300px;
+  padding-top: 250px;
 }
 .cart__img {
   width: auto;
@@ -206,7 +196,7 @@ header {
 }
 .cart__text {
   margin-top: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: gray;
 }
 .listonHome .textListon {
@@ -214,4 +204,18 @@ header {
   font-weight: 600;
   line-height: 1;
   padding-top: 0.3rem;
+}
+.nav-btn {
+  position: absolute;
+  background-color: transparent;
+  right: 10px;
+  top: 8px;
+  width: 35px;
+  height: 35px;
+  border: 1px solid transparent;
+  line-height: 0.7;
+}
+.icon__buscar {
+  font-size: 1.7rem;
+  color: $colorPrincipal;
 }

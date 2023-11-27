@@ -121,18 +121,6 @@ header .navLetra:hover {
   border: 0.2rem solid white;
 }
 
-.nav-btn {
-  width: 40px;
-  height: 40px;
-  padding-bottom: 0.3rem;
-  font-size: 1.3rem;
-  background-color: #e295a2;
-  border: solid 3px #e295a2;
-  border-radius: 10px;
-  color: #feebed;
-  box-shadow: 0 10px 10px -5px rgba(255, 255, 255, 0.8);
-}
-
 .cont__search {
   position: relative;
   margin-left: 5rem;
@@ -163,7 +151,7 @@ header .navLetra:hover {
 }
 
 .cart-container {
-  border: 3px solid #e295a2;
+  border: 3px solid white;
   border-radius: 5px;
   width: 25%;
   height: 100%;
@@ -180,10 +168,9 @@ header .navLetra:hover {
 }
 
 .navbar__toggler {
-  width: 40px;
-  height: 40px;
+  text-align: center;
+  position: relative;
   padding-bottom: 0.3rem;
-  font-size: 1.3rem;
   margin-bottom: 0.3rem;
   margin-left: 0.5rem;
   background-color: #e295a2;
@@ -191,6 +178,11 @@ header .navLetra:hover {
   border-radius: 10px;
   color: #feebed;
   box-shadow: 0 10px 10px -5px rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+.fa-bag-shopping {
+  font-size: 2.5rem;
 }
 
 .cart-close {
@@ -203,16 +195,14 @@ header .navLetra:hover {
   font-size: 2rem;
   text-align: center;
   line-height: 2rem;
-  background-color: #e295a2;
-  border: solid 3px #e295a2;
-  border-radius: 10px;
-  color: #feebed;
+  color: #e295a2;
+  border: 0;
 }
 
 .cart-cont__img {
   display: block;
   text-align: center;
-  padding-top: 300px;
+  padding-top: 250px;
 }
 
 .cart__img {
@@ -222,7 +212,7 @@ header .navLetra:hover {
 
 .cart__text {
   margin-top: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: gray;
 }
 
@@ -231,6 +221,22 @@ header .navLetra:hover {
   font-weight: 600;
   line-height: 1;
   padding-top: 0.3rem;
+}
+
+.nav-btn {
+  position: absolute;
+  background-color: transparent;
+  right: 10px;
+  top: 8px;
+  width: 35px;
+  height: 35px;
+  border: 1px solid transparent;
+  line-height: 0.7;
+}
+
+.icon__buscar {
+  font-size: 1.7rem;
+  color: #e295a2;
 }
 
 .botonColor, .botonCont, .btnPro {
@@ -357,6 +363,141 @@ header .navLetra:hover {
     line-height: 1.4rem;
   }
 }
+#cart-container {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #e295a2 #f4f4f4;
+}
+
+#cart-container::-webkit-scrollbar {
+  width: 8px;
+  height: 20px;
+}
+
+#cart-container::-webkit-scrollbar-thumb {
+  background-color: #e295a2;
+}
+
+#cart-container::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+}
+
+#cart-container .cart-product-img {
+  width: 120px;
+  height: 140px;
+}
+
+.cart-titulo {
+  font-size: 1rem;
+  color: gray;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+
+.cart-act {
+  display: flex;
+  flex-direction: row;
+  line-height: 0.1;
+  margin-top: 2.5rem;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.cart-act:last-child {
+  margin-bottom: 6rem;
+}
+
+.cart-text {
+  font-size: 0.8rem;
+  color: gray;
+  font-weight: 100;
+  padding-bottom: 0.2rem;
+}
+
+.cart-icon {
+  font-size: 1rem;
+  background-color: transparent;
+  color: gray;
+  font-weight: 300;
+}
+
+.cart-btn {
+  background-color: white;
+  border: 0;
+}
+
+.cart-input {
+  width: 20%;
+  border: 0;
+  text-align: center;
+  padding-left: 1rem;
+}
+
+.cont-finalizar {
+  position: fixed;
+  bottom: 10px;
+  padding-left: 6rem;
+}
+
+.cart-finalizar-compra {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e295a2;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #feebed;
+  line-height: 1.5;
+  border: 1px solid #e295a2;
+  border-radius: 5px;
+  box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.3);
+  transition: all 300ms ease-in-out;
+}
+.cart-finalizar-compra:hover {
+  background-color: #feebed;
+  color: #e295a2;
+}
+
+@media (max-width: 768px) {
+  .cart-container {
+    width: 80%;
+  }
+  .cart-titulo {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 1280px) {
+  .cart-finalizar-compra {
+    font-size: 1.1rem;
+  }
+}
+.finalizar-text {
+  font-size: 1.5rem;
+  color: gray;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 6rem;
+  margin-top: 10rem;
+}
+
+.finalizar-total {
+  color: #e295a2;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.contador-carrito {
+  position: absolute;
+  top: 15%;
+  right: 35%;
+  color: #e295a2;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
 .imgQuienesSomos {
   width: 500px;
   height: 600px;

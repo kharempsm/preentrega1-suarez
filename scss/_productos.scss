@@ -118,3 +118,131 @@
     line-height: 1.4rem;
   }
 }
+
+//CONTENEDOR CARRITO
+
+#cart-container {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $colorPrincipal #f4f4f4;
+}
+#cart-container::-webkit-scrollbar {
+  width: 8px;
+  height: 20px;
+}
+#cart-container::-webkit-scrollbar-thumb {
+  background-color: $colorPrincipal;
+}
+#cart-container::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+}
+#cart-container .cart-product-img {
+  width: 120px;
+  height: 140px;
+}
+
+.cart-titulo {
+  font-size: 1rem;
+  color: gray;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+.cart-act {
+  display: flex;
+  flex-direction: row;
+  line-height: 0.1;
+  margin-top: 2.5rem;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  &:last-child {
+    margin-bottom: 6rem;
+  }
+}
+.cart-text {
+  font-size: 0.8rem;
+  color: gray;
+  font-weight: 100;
+  padding-bottom: 0.2rem;
+}
+.cart-icon {
+  font-size: 1rem;
+  background-color: transparent;
+  color: gray;
+  font-weight: 300;
+}
+.cart-btn {
+  background-color: white;
+  border: 0;
+}
+.cart-input {
+  width: 20%;
+  border: 0;
+  text-align: center;
+  padding-left: 1rem;
+}
+
+.cont-finalizar {
+  position: fixed;
+  bottom: 10px;
+  padding-left: 6rem;
+}
+
+.cart-finalizar-compra {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $colorPrincipal;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: $colorSecundario;
+  line-height: 1.5;
+  border: 1px solid $colorPrincipal;
+  border-radius: 5px;
+  box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.3);
+  transition: all 300ms ease-in-out;
+  &:hover {
+    background-color: $colorSecundario;
+    color: $colorPrincipal;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-container {
+    width: 80%;
+  }
+  .cart-titulo {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .cart-finalizar-compra {
+    font-size: 1.1rem;
+  }
+}
+.finalizar-text {
+  font-size: 1.5rem;
+  color: gray;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 6rem;
+  margin-top: 10rem;
+}
+.finalizar-total {
+  color: $colorPrincipal;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.contador-carrito {
+  position: absolute;
+  top: 15%;
+  right: 35%;
+  color: $colorPrincipal;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
