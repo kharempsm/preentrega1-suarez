@@ -219,3 +219,13 @@ header {
   font-size: 1.7rem;
   color: $colorPrincipal;
 }
+.contador-carrito {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  color: $colorPrincipal;
+  font-size: 1.5rem;
+  font-weight: 300;
+  vertical-align: middle;
+}

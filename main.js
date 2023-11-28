@@ -203,6 +203,8 @@ function actualizarCarrito() {
   `;
 
   asignarEventoCerrarCarrito();
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
   actualizarContadorCarrito();
 }
 // BOTONES PARA ELIMINAR Y AGREGAR PRODUCTO
@@ -251,6 +253,17 @@ function asignarEventoCerrarCarrito() {
   const closeCartBtn = document.getElementById("close-cart");
   closeCartBtn.addEventListener("click", cerrarCarrito);
 }
+
+// FUNCION PARA GUARDAR CARRITO EN EL LOCAL STORAGE
+
+document.addEventListener("DOMContentLoaded", () => {
+  const carritoGuardado = localStorage.getItem("carrito");
+
+  if (carritoGuardado) {
+    carrito = JSON.parse(carritoGuardado);
+    actualizarCarrito();
+  }
+});
 
 //FUNCION QUE ACTUALIZA LA CANTIDAD DEL ICONO DEL NAVBAR
 
