@@ -27,7 +27,7 @@
     <script src="../main.js" defer></script>
   </head>
   <body>
-    <header class="navbar navbar-expand-lg">
+    <header class="navbar navbar-expand-lg site-header">
       <div class="container-fluid">
         <a href="../index.html">
           <img
@@ -76,7 +76,7 @@
               >
             </li>
             <li class="nav-item">
-              <form class="cont__search d-flex">
+              <form class="cont__search d-flex" onsubmit="return false;">
                 <input
                   id="inputPrenda"
                   name="Buscar"
@@ -84,12 +84,12 @@
                   type="search"
                   placeholder="Prenda"
                   aria-label="buscar"
+                  oninput="checkInputValue(this)"
                 />
-                <label for="buscar" class="form__label">Prenda </label>
-                <button class="nav-btn">
+                <label for="inputPrenda" class="form__label">Prenda </label>
+                <button class="nav-btn" onclick="submitForm()">
                   <i class="fa-solid fa-magnifying-glass icon__buscar"></i>
                 </button>
-              </form>
               </form>
             </li>
             
@@ -109,6 +109,11 @@
         <img class="cart__img" src="../img/img-carritovacio.svg" alt="" />
         <p class="cart__text">Tu carrito de compras esta vacio</p>
       </div>
+    </div>
+    <div class="cont__dark">
+      <button class="btn__dark" id="toggle-mode">
+        <i class="fa-solid fa-circle-half-stroke icon__dark"></i>
+      </button>
     </div>
     <h1 class="tituloPro">CONOCE NUESTRA HISTORIA</h1>
     <main class="padreQs">
@@ -199,5 +204,6 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

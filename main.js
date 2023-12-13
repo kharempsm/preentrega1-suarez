@@ -4,7 +4,7 @@ let productosInfantiles = [
     categoria: "conjuntos",
     precio: 14990,
     tallas: ["s", "m", "l", "xl"],
-    imagen: "../img/conjunto-1.webp",
+    imagen: "..img/conjunto-1.webp",
   },
   {
     nombre: "Conjunto de niña con vestido y calza",
@@ -309,7 +309,7 @@ function finalizarCompra() {
     const totalCarritoRedondeado = Math.round(totalCarritoConIVA);
 
     const mensajeCompra = `
-      <p class="finalizar-text">¡Tu compra ha sido realizada con exito!</p>
+      <p class="finalizar-text">¡Tu compra ha sido realizada con éxito!</p>
       <p class="finalizar-total">Total: $${totalCarritoRedondeado}</p>
       <p class="finalizar-text">Gracias por tu compra, te esperamos pronto en Helena Clothes.</p>
     `;
@@ -318,16 +318,27 @@ function finalizarCompra() {
 
     setTimeout(() => {
       cartContainer.innerHTML = mensajeCompra;
-    }, 100);
+
+      Swal.fire({
+        title: "¡Gracias por tu compra!",
+        text: "Te esperamos pronto en Helena Clothes.",
+        icon: "success",
+        timer: 5000,
+        showConfirmButton: false,
+        background: "#fafafa",
+        iconColor: "#e295a2",
+        customClass: {
+          title: "swal-custom-title",
+          htmlContainer: "swal-custom-text",
+          popup: "swal-custom-popup",
+        },
+      });
+    });
 
     setTimeout(() => {
       carrito = [];
       actualizarCarrito();
-    }, 5000);
-  } else {
-    alert(
-      "La cantidad de algún producto en el carrito es inválida. Verifica y vuelve a intentarlo."
-    );
+    }, 3000);
   }
 }
 
@@ -346,34 +357,117 @@ function verificarCantidadProductos() {
 
 // FILTRAR POR NOMBRE DE PRODUCTO EN EL INPUT DE BUSQUEDA DEL HEADER
 
-function filtrarProductosPorNombre(termino) {
-  return productosInfantiles.filter((producto) =>
-    producto.nombre.toLowerCase().includes(termino.toLowerCase())
-  );
+document.addEventListener("DOMContentLoaded", function () {
+  const inputPrenda = document.getElementById("inputPrenda");
+  const productos = document.querySelectorAll(".producto");
+
+  inputPrenda.addEventListener("input", function (event) {
+    const terminoBusqueda = inputPrenda.value.trim().toLowerCase();
+
+    productos.forEach((producto) => {
+      const textoProducto = producto
+        .querySelector(".textProductos")
+        .textContent.trim()
+        .toLowerCase();
+      const coincide = textoProducto.includes(terminoBusqueda);
+      producto.style.display = coincide ? "block" : "none";
+    });
+
+    if (event.key === "Enter") {
+      event.preventDefault();
+      realizarBusqueda();
+    }
+  });
+
+  const botonBusqueda = document.querySelector(".nav-btn");
+  botonBusqueda.addEventListener("click", function () {
+    realizarBusqueda();
+  });
+
+  function realizarBusqueda() {
+    const terminoBusqueda = inputPrenda.value.trim();
+    if (terminoBusqueda) {
+      const paginaActual = window.location.pathname;
+
+      if (paginaActual.endsWith("index.html")) {
+        window.location.href =
+          "html/productos.html?buscar=" + encodeURIComponent(terminoBusqueda);
+      } else {
+        window.location.href =
+          "./productos.html?buscar=" + encodeURIComponent(terminoBusqueda);
+      }
+    }
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const terminoBusquedaURL = urlParams.get("buscar");
+
+  if (terminoBusquedaURL) {
+    inputPrenda.value = terminoBusquedaURL;
+    productos.forEach((producto) => {
+      const textoProducto = producto
+        .querySelector(".textProductos")
+        .textContent.trim()
+        .toLowerCase();
+      const coincide = textoProducto.includes(terminoBusquedaURL);
+      producto.style.display = coincide ? "block" : "none";
+    });
+  }
+});
+
+// RECOMENDANDO SECCIONES DE ACUERDO A LA TEMPERATURA
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("temp__form");
+  const cityInput = document.getElementById("city__input");
+  const tempResultado = document.querySelector(".temp__resultado");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const ciudad = cityInput.value;
+
+    const apiKey = "a0fb083a09f66f2480ac1bf270bda979";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`;
+
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+
+        const temperatura = data.main.temp;
+
+        if (temperatura > 15) {
+          tempResultado.innerHTML = `La temperatura en ${ciudad} es ${temperatura} °C. Te recomendamos ir a la sección de Poleras y Vestidos.`;
+        } else {
+          tempResultado.innerHTML = `La temperatura en ${ciudad} es ${temperatura} °C. Te recomendamos ir a la sección de Chaquetas y Conjuntos.`;
+        }
+      })
+      .catch((error) => {
+        console.error("Error al obtener datos del clima:", error);
+        tempResultado.innerHTML = "Ingresa una ciudad correcta";
+      });
+  });
+});
+
+const toggleModeButton = document.getElementById("toggle-mode");
+const body = document.body;
+
+// Verifica la preferencia del usuario en el almacenamiento local
+const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+
+// Aplica el modo oscuro si está habilitado
+if (isDarkMode) {
+  body.classList.add("dark-mode");
 }
 
-function mostrarProductos(productos) {
-  console.clear();
-  6;
-  productos.forEach((producto) =>
-    console.log(
-      producto.nombre + " - $" + producto.precio + " + iva" + " Talla: " + talla
-    )
-  );
-}
-function manejarCambioInput() {
-  const input = document.getElementById("inputPrenda");
-  const termino = input.value.trim();
-
-  const productosFiltrados = filtrarProductosPorNombre(termino);
-
-  mostrarProductos(
-    productosFiltrados.length > 0 ? productosFiltrados : productosInfantiles
-  );
-}
-
-document
-  .getElementById("inputPrenda")
-  .addEventListener("input", manejarCambioInput);
-
-/*agregar cantidad en el icono de carrito. agregaton boton finalizar en el carrito, mostrar en el dom lo que se busque en el input de busqueda*/
+// Maneja el cambio de modo cuando se hace clic en el botón
+toggleModeButton.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+  // Guarda la preferencia del usuario en el almacenamiento local
+  if (body.classList.contains("dark-mode")) {
+    localStorage.setItem("darkMode", "enabled");
+  } else {
+    localStorage.removeItem("darkMode");
+  }
+});

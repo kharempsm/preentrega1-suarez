@@ -31,7 +31,7 @@
     <script src="../main.js" defer></script>
   </head>
   <body>
-    <header class="navbar navbar-expand-lg">
+    <header class="navbar navbar-expand-lg site-header">
       <div class="container-fluid">
         <a href="../index.html">
           <img
@@ -83,7 +83,7 @@
               >
             </li>
             <li class="nav-item">
-              <form class="cont__search d-flex">
+              <form class="cont__search d-flex" onsubmit="return false;">
                 <input
                   id="inputPrenda"
                   name="Buscar"
@@ -91,9 +91,10 @@
                   type="search"
                   placeholder="Prenda"
                   aria-label="buscar"
+                  oninput="checkInputValue(this)"
                 />
-                <label for="buscar" class="form__label">Prenda </label>
-                <button class="nav-btn">
+                <label for="inputPrenda" class="form__label">Prenda </label>
+                <button class="nav-btn" onclick="submitForm()">
                   <i class="fa-solid fa-magnifying-glass icon__buscar"></i>
                 </button>
               </form>
@@ -115,13 +116,18 @@
         <p class="cart__text">Tu carrito de compras esta vacio</p>
       </div>
     </div>
+    <div class="cont__dark">
+      <button class="btn__dark" id="toggle-mode">
+        <i class="fa-solid fa-circle-half-stroke icon__dark"></i>
+      </button>
+    </div>
     <!-- CARDS -->
     <main>
-      <!-- CARDS POLERAS -->
+      <!-- CARDS CONJUNTOS -->
       <h2 class="tituloPro">CONJUNTOS DE NIÑA</h2>
       <section class="row container-fluid d-flex justify-content-center">
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 producto" data-id="0">
+          <div id="card-0" class="cardProductos">
             <img
               src="../img/conjunto-1.webp"
               class="card-img-top imgProducto"
@@ -154,8 +160,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 producto" data-id="1">
+          <div id="card-1" class="cardProductos">
             <div class="contenedor__tallas">
               <div class="contenedor__talla" onclick="seleccionarTalla(this)">
                 S
@@ -190,8 +196,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 producto" data-id="2">
+          <div id="card-2" class="cardProductos">
             <div class="contenedor__tallas">
               <div class="contenedor__talla" onclick="seleccionarTalla(this)">
                 S
@@ -226,8 +232,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 producto" data-id="3">
+          <div id="card-3" class="cardProductos">
             <div class="contenedor__tallas">
               <div class="contenedor__talla" onclick="seleccionarTalla(this)">
                 S
@@ -267,8 +273,8 @@
       <h2 class="tituloPro">POLERAS DE NIÑA</h2>
 
       <section class="row container-fluid d-flex justify-content-center">
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 producto" data-id="5">
+          <div id="card-4" class="cardProductos">
             <div class="contenedor__tallas">
               <div class="contenedor__talla" onclick="seleccionarTalla(this)">
                 S
@@ -301,8 +307,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 producto" data-id="5">
+          <div id="card-5" class="cardProductos">
             <div class="contenedor__tallas">
               <div class="contenedor__talla" onclick="seleccionarTalla(this)">
                 S
@@ -335,8 +341,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 producto" data-id="6">
+          <div id="card-6" class="cardProductos">
             <div class="contenedor__tallas">
               <div class="contenedor__talla" onclick="seleccionarTalla(this)">
                 S
@@ -369,8 +375,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 producto" data-id="7">
+          <div id="card-7" class="cardProductos">
             <div class="contenedor__tallas">
               <div class="contenedor__talla" onclick="seleccionarTalla(this)">
                 S
@@ -407,8 +413,8 @@
       <!-- CARD DE VESTIDOS -->
       <h2 class="tituloPro">VESTIDOS DE NIÑA</h2>
       <section class="row container-fluid d-flex justify-content-center">
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 producto" data-id="8">
+          <div id="card-8" class="cardProductos">
             <div class="contenedor__tallas">
               <div class="contenedor__talla" onclick="seleccionarTalla(this)">
                 S
@@ -441,8 +447,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 producto" data-id="9">
+          <div id="card-9" class="cardProductos">
             <div class="contenedor__tallas">
               <div class="contenedor__talla" onclick="seleccionarTalla(this)">
                 S
@@ -475,8 +481,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 procucto" data-id="10">
+          <div id="card-10" class="cardProductos">
             <div class="contenedor__tallas">
               <div class="contenedor__talla" onclick="seleccionarTalla(this)">
                 S
@@ -509,8 +515,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 producto" data-id="11">
+          <div id="card-11" class="cardProductos">
             <div class="contenedor__tallas">
               <div class="contenedor__talla" onclick="seleccionarTalla(this)">
                 S
@@ -547,8 +553,8 @@
       <!-- CARDS CHAQUETAS -->
       <h2 class="tituloPro">CHAQUETAS DE NIÑA</h2>
       <section class="row container-fluid d-flex justify-content-between">
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 producto" data-id="12">
+          <div id="card-12" class="cardProductos">
             <div class="contenedor__tallas">
               <div class="contenedor__talla" onclick="seleccionarTalla(this)">
                 S
@@ -581,8 +587,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 producto" data-id="13">
+          <div id="card-13" class="cardProductos">
             <div class="contenedor__tallas">
               <div class="contenedor__talla" onclick="seleccionarTalla(this)">
                 S
@@ -615,8 +621,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 producto" data-id="14">
+          <div id="card-14" class="cardProductos">
             <div class="contenedor__tallas">
               <div class="contenedor__talla" onclick="seleccionarTalla(this)">
                 S
@@ -649,8 +655,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-3 col-sm-6">
-          <div class="cardProductos">
+        <div class="col-xl-3 col-md-3 col-sm-6 producto" data-id="15">
+          <div id="card-15" class="cardProductos">
             <div class="contenedor__tallas">
               <div class="contenedor__talla" onclick="seleccionarTalla(this)">
                 S
@@ -722,5 +728,6 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
