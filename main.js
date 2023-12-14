@@ -363,6 +363,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   inputPrenda.addEventListener("input", function (event) {
     const terminoBusqueda = inputPrenda.value.trim().toLowerCase();
+    let productosEncontrados = false;
 
     productos.forEach((producto) => {
       const textoProducto = producto
@@ -371,30 +372,42 @@ document.addEventListener("DOMContentLoaded", function () {
         .toLowerCase();
       const coincide = textoProducto.includes(terminoBusqueda);
       producto.style.display = coincide ? "block" : "none";
+
+      if (coincide) {
+        productosEncontrados = true;
+      }
     });
 
     if (event.key === "Enter") {
       event.preventDefault();
-      realizarBusqueda();
+      realizarBusqueda(productosEncontrados);
     }
   });
 
   const botonBusqueda = document.querySelector(".nav-btn");
   botonBusqueda.addEventListener("click", function () {
-    realizarBusqueda();
+    realizarBusqueda(true);
   });
 
-  function realizarBusqueda() {
+  function realizarBusqueda(productosEncontrados) {
     const terminoBusqueda = inputPrenda.value.trim();
     if (terminoBusqueda) {
       const paginaActual = window.location.pathname;
 
-      if (paginaActual.endsWith("index.html")) {
-        window.location.href =
-          "html/productos.html?buscar=" + encodeURIComponent(terminoBusqueda);
+      if (productosEncontrados) {
+        if (paginaActual.endsWith("index.html")) {
+          window.location.href =
+            "html/productos.html?buscar=" + encodeURIComponent(terminoBusqueda);
+        } else {
+          window.location.href =
+            "./productos.html?buscar=" + encodeURIComponent(terminoBusqueda);
+        }
       } else {
-        window.location.href =
-          "./productos.html?buscar=" + encodeURIComponent(terminoBusqueda);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "El producto que buscas no existe.",
+        });
       }
     }
   }
@@ -404,6 +417,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (terminoBusquedaURL) {
     inputPrenda.value = terminoBusquedaURL;
+    let productosEncontrados = false;
+
     productos.forEach((producto) => {
       const textoProducto = producto
         .querySelector(".textProductos")
@@ -411,7 +426,20 @@ document.addEventListener("DOMContentLoaded", function () {
         .toLowerCase();
       const coincide = textoProducto.includes(terminoBusquedaURL);
       producto.style.display = coincide ? "block" : "none";
+
+      if (coincide) {
+        productosEncontrados = true;
+      }
     });
+
+    if (!productosEncontrados) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "El producto que buscas no existe.",
+        iconColor: "#e295a2",
+      });
+    }
   }
 });
 
