@@ -450,21 +450,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// CAMBIAR DE OSCURO A CLARO
+
 const toggleModeButton = document.getElementById("toggle-mode");
 const body = document.body;
 
-// Verifica la preferencia del usuario en el almacenamiento local
 const isDarkMode = localStorage.getItem("darkMode") === "enabled";
 
-// Aplica el modo oscuro si está habilitado
 if (isDarkMode) {
   body.classList.add("dark-mode");
 }
 
-// Maneja el cambio de modo cuando se hace clic en el botón
 toggleModeButton.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
-  // Guarda la preferencia del usuario en el almacenamiento local
   if (body.classList.contains("dark-mode")) {
     localStorage.setItem("darkMode", "enabled");
   } else {

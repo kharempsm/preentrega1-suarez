@@ -340,6 +340,10 @@ header .navLetra:hover {
   line-height: 1.5;
 }
 
+.dark-mode .contContacto {
+  background-color: #333333;
+}
+
 .botonColor, .botonCont, .btnPro {
   font-size: 1.5rem;
   border: 3px solid #e295a2;
